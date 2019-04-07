@@ -14,7 +14,17 @@ print(emp, " ", emp.name, " ", emp.age)
 emp.printName()
 
 class ChildClass(TestClass):
-    pass
+    def __init__(self, name, age, skill):
+        TestClass.__init__(self, name, age)
+        self.skill = skill
 
-child = ChildClass("Child", 2)
+    def printSkill(self):
+        print(self.skill)
+
+    def toString(self):
+        print("Child details --> Name: {}, Age: {} and Skill:{}".format(self.name, self.age, self.skill))
+
+child = ChildClass("Child", 2, "Run")
 child.printName()
+child.printSkill()
+child.toString()
